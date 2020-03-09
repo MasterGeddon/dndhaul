@@ -34,7 +34,8 @@ public class test {
 //	      }
 	      
 	      List<Classe> list2  = (List<Classe>)dbf.selectObjectFromTable(entityManager, Konstanten.T_CLASSE , 3 , Konstanten.C_CLASSE_ID);
-	    
+	      
+	      
 	      for( Classe e:list2 )
 	      {
 	         System.out.println("classe id :"+e.getClas_id());
@@ -46,7 +47,15 @@ public class test {
 	      }
 	      
 	      CharCreatorController con = new CharCreatorController();
-	      con.addPlayerCharacter(entityManager);
+	      PlayerCharacter pc = con.addPlayerCharacter(entityManager);
+	      con.setStatsRandom(pc);
+	      con.savePlayerCharacter(entityManager, "Bob der Baumeister ja So heiﬂt er", "Babadibabada",con.getEmptyClasse(entityManager),con.getEmptyRasseSub(entityManager) ,
+	    		  pc.getChar_str() ,
+	    		  pc.getChar_dex(), 
+	    		  pc.getChar_con(),
+	    		  pc.getChar_int(), 
+	    		  pc.getChar_wis(), 
+	    		  pc.getChar_cha(), pc);
 	      
 	      
 		entityManager.close();

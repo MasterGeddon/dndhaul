@@ -126,7 +126,7 @@ public class CharCreatorController {
 		em.flush();
 		em.getTransaction().commit();
 		
-		System.out.println("Charakter Created with ID: "+pc.getChar_id());
+		System.out.println("Charakter Saved with ID: "+pc.getChar_id());
 		
 		return pc;
 	}
@@ -134,7 +134,10 @@ public class CharCreatorController {
 	
 	//zur Erstellung der Random werte für die Stats
 	public int randomWert() {
-		return 1+(int)Math.random()*20;
+		int i =1+(int)(Math.random()*20);
+		System.out.println("Randomwert "+i);
+
+		return i;
 	}
 	
 	public PlayerCharacter setStatsRandom(PlayerCharacter pc) {
