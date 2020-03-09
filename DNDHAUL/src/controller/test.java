@@ -57,6 +57,26 @@ public class test {
 	    		  pc.getChar_wis(), 
 	    		  pc.getChar_cha(), pc);
 	      
+	      con.setStatsRandom(pc);
+	      
+	      System.out.println( pc.getChar_str() +" "+
+	    		  pc.getChar_dex()+" "+
+	    		  pc.getChar_con()+" "+
+	    		  pc.getChar_int()+" "+ 
+	    		  pc.getChar_wis()+" "+
+	    		  pc.getChar_cha());
+	     pc = con.cancelEditingPC(entityManager, pc);
+	      System.out.println("canceled");
+
+	      System.out.println( pc.getChar_str() +" "+
+	    		  pc.getChar_dex()+" "+
+	    		  pc.getChar_con()+" "+
+	    		  pc.getChar_int()+" "+ 
+	    		  pc.getChar_wis()+" "+
+	    		  pc.getChar_cha());
+	      
+	      
+	      
 	      
 		entityManager.close();
 		entityManagerFactory.close();

@@ -152,6 +152,7 @@ public class CharCreatorController {
 	}
 	
 	public PlayerCharacter cancelEditingPC(EntityManager em, PlayerCharacter pc) {
+		em.refresh(pc);
 		pc = em.find(PlayerCharacter.class , pc.getChar_id());
 		return pc;
 	}
