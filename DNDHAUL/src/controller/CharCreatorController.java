@@ -137,6 +137,22 @@ public class CharCreatorController {
 		return 1+(int)Math.random()*20;
 	}
 	
+	public PlayerCharacter setStatsRandom(PlayerCharacter pc) {
+		pc.setChar_str(randomWert());
+		pc.setChar_dex(randomWert());
+		pc.setChar_con(randomWert());
+		pc.setChar_int(randomWert());
+		pc.setChar_wis(randomWert());
+		pc.setChar_cha(randomWert());
+		
+		return pc;
+	}
+	
+	public PlayerCharacter cancelEditingPC(EntityManager em, PlayerCharacter pc) {
+		pc = em.find(PlayerCharacter.class , pc.getChar_id());
+		return pc;
+	}
+	
 	public List<Classe> getALLClasse(EntityManager em){      
 		 
 		List<Classe> list = (List<Classe>)dbCon.getListTable(em, Konstanten.T_CLASSE);
