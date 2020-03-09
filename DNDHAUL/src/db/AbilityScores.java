@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import konstanten.Konstanten;
+import konsti.Konstanten;
 
 @Entity
 @Table(name= Konstanten.T_ABILITYSCORES)

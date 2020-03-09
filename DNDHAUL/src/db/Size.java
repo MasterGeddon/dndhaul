@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import konstanten.Konstanten;
+import konsti.Konstanten;
 
 @Entity
 @Table(name = Konstanten.T_SIZE)

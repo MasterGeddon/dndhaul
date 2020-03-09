@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import db.*;
-import konstanten.Konstanten;
+import konsti.Konstanten;
 
 public class test {
 

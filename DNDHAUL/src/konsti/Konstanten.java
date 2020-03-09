@@ -1,4 +1,4 @@
-package konstanten;
+package konsti;
 
 public class Konstanten {
 	

@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import konstanten.Konstanten;
+import konsti.Konstanten;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

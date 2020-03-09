@@ -13,7 +13,7 @@ import db.Rasse;
 import db.RasseSub;
 import db.Rasse_to_AbilityScore;
 import db.Weapon;
-import konstanten.Konstanten;
+import konsti.Konstanten;
 
 public class CharCreatorController {
 	
