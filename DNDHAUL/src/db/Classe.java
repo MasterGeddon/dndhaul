@@ -23,16 +23,16 @@ public class Classe implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_CLASSE_ID)
-	public int clas_id;
+	private int clas_id;
 	
 	@Column(name = Konstanten.C_CLASSE_NAME)
-	public String clas_name;
+	private String clas_name;
 	@Column(name = Konstanten.C_CLASSE_DESCRIPTION)
-	public String clas_description;
+	private String clas_description;
 	@Column(name = Konstanten.C_CLASSE_HITDIE)
-	public int clas_hitDie;
+	private int clas_hitDie;
 	@Column(name = Konstanten.C_CLASSE_ABILITYSTRONG)
-	public String clas_ability_strong;
+	private String clas_ability_strong;
 	
 	
 	

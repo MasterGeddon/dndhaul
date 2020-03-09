@@ -23,27 +23,27 @@ public class RasseSub implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_RASSESUB_ID)
-	public int rasu_id;
+	private int rasu_id;
 
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(nullable = false, name =Konstanten.C_RASSESUB_RASSE_ID)
-	public Rasse rasu_rass_id;
+	private Rasse rasu_rass_id;
 	
 
 	@Column(name = Konstanten.C_RASSESUB_NAME)
-	public String rasu_name;
+	private String rasu_name;
 
 	@Column(name = Konstanten.C_RASSESUB_AGE)
-	public int rasu_age;
+	private int rasu_age;
 	
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = Konstanten.C_RASSESUB_SIZE_ID,nullable = false)
-	public Size rasu_size_id;
+	private Size rasu_size_id;
 	
 	@Column(name = Konstanten.C_RASSESUB_SPEED)
-	public int rasu_speed;
+	private int rasu_speed;
 	
 	public String getRasu_name() {
 		return rasu_name;

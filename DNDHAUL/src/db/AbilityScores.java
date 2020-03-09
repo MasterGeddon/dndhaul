@@ -22,11 +22,11 @@ public class AbilityScores implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_ABILITYSCORES_ID)
-	public int absc_id;
+	private int absc_id;
 	
 
 	@Column(name = Konstanten.C_ABILITYSCORES_NAME)
-	public String absc_name;
+	private String absc_name;
 	
 	@ManyToMany(mappedBy="sato")
 	private Set<Classe> sato = new HashSet<>();

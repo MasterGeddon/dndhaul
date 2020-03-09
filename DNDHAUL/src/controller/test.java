@@ -45,7 +45,8 @@ public class test {
 	         }
 	      }
 	      
-	      
+	      CharCreatorController con = new CharCreatorController();
+	      con.addPlayerCharacter(entityManager);
 	      
 	      
 		entityManager.close();

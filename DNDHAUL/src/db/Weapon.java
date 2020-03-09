@@ -23,10 +23,10 @@ public class Weapon implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_WEAPON_ID)
-	public int weap_id;
+	private int weap_id;
 
 	@Column(name = Konstanten.C_WEAPON_TYP)
-	public String weap_typ;
+	private String weap_typ;
 
 	public String getWeap_typ() {
 		return weap_typ;

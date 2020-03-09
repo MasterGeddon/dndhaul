@@ -18,9 +18,9 @@ public class Size implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_SIZE_ID)
-	public int size_id;
+	private int size_id;
 	@Column(name = Konstanten.C_SIZE_TYP)
-	public String size_typ;
+	private String size_typ;
 
 	public String getSize_typ() {
 		return size_typ;

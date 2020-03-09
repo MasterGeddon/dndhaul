@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import controller.DBAbfragen;
 import konsti.Konstanten;
 
 @Entity
@@ -20,35 +21,35 @@ public class PlayerCharacter implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name= Konstanten.C_PLAYERCHARACTER_ID)
-	public int char_id;
+	private int char_id;
 	
 	@Column(name= Konstanten.C_PLAYERCHARACTER_BACKSTORY)
-	public String char_backstory ;
+	private String char_backstory ;
 
 	@Column(name= Konstanten.C_PLAYERCHARACTER_NAME)
-	public String char_name ;
+	private String char_name ;
 	
 	@Column(name= Konstanten.C_PLAYERCHARACTER_STR , nullable = false)
-	public int char_str =0;
+	private int char_str =0;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_DEX , nullable = false)
-	public int char_dex =0;
+	private int char_dex =0;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_CON , nullable = false)
-	public int char_con =0;
+	private int char_con =0;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_INT , nullable = false)
-	public int char_int =0;
+	private int char_int =0;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_WIS , nullable = false)
-	public int char_wis =0;
+	private int char_wis =0;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_CHA , nullable = false)
-	public int char_cha =0;
+	private int char_cha =0;
 	
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name= Konstanten.C_PLAYERCHARACTER_CLASSE_ID)
-	public Classe char_clas_id;
+	@JoinColumn(name= Konstanten.C_PLAYERCHARACTER_CLASSE_ID ,nullable= true)
+	private Classe char_clas_id;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name= Konstanten.C_PLAYERCHARACTER_RASSE_ID)
-	public RasseSub char_rasu_id;
+	@JoinColumn(name= Konstanten.C_PLAYERCHARACTER_RASSE_ID , nullable = true)
+	private RasseSub char_rasu_id;
 	
 	
 	public PlayerCharacter (String char_backstory , String char_name ,Classe char_clas_id ,RasseSub char_rasu_id,
@@ -75,8 +76,8 @@ public class PlayerCharacter implements Serializable {
 	public PlayerCharacter () {
 		this.char_backstory = "Diese Character backstory ist leer" ;
 		this.char_name = "BOB";
-		
 	}
+	
 	
 	
 	
@@ -121,7 +122,13 @@ public class PlayerCharacter implements Serializable {
 	}
 
 	public void setChar_str(int char_str) {
+		if(char_str >=20) {
+			this.char_str =20;
+		}else if(char_str <=0){
+			this.char_str = 0;
+		}else {
 		this.char_str = char_str;
+		}
 	}
 
 	public int getChar_dex() {
@@ -129,7 +136,13 @@ public class PlayerCharacter implements Serializable {
 	}
 
 	public void setChar_dex(int char_dex) {
+		if(char_dex >=20) {
+			this.char_dex =20;
+		}else if(char_dex <=0){
+			this.char_dex = 0;
+		}else {
 		this.char_dex = char_dex;
+		}
 	}
 
 	public int getChar_con() {
@@ -137,7 +150,13 @@ public class PlayerCharacter implements Serializable {
 	}
 
 	public void setChar_con(int char_con) {
+		if(char_con >=20) {
+			this.char_con =20;
+		}else if(char_con <=0){
+			this.char_con = 0;
+		}else {
 		this.char_con = char_con;
+		}
 	}
 
 	public int getChar_int() {
@@ -145,7 +164,13 @@ public class PlayerCharacter implements Serializable {
 	}
 
 	public void setChar_int(int char_int) {
+		if(char_int >=20) {
+			this.char_int =20;
+		}else if(char_int <=0){
+			this.char_int = 0;
+		}else {
 		this.char_int = char_int;
+		}
 	}
 
 	public int getChar_wis() {
@@ -153,7 +178,13 @@ public class PlayerCharacter implements Serializable {
 	}
 
 	public void setChar_wis(int char_wis) {
-		this.char_wis = char_wis;
+		if(char_wis >=20) {
+			this.char_wis =20;
+		}else if(char_wis <=0){
+			this.char_wis = 0;
+		}else {
+			this.char_wis = char_wis;
+		}
 	}
 
 	public int getChar_cha() {
@@ -161,7 +192,13 @@ public class PlayerCharacter implements Serializable {
 	}
 
 	public void setChar_cha(int char_cha) {
+		if(char_cha >=20) {
+			this.char_cha =20;
+		}else if(char_cha <=0){
+			this.char_cha = 0;
+		}else {
 		this.char_cha = char_cha;
+		}
 	}
 
 	public void setChar_id(int char_id) {

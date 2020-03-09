@@ -22,10 +22,10 @@ public class Armor implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_ARMOR_ID)
-	public int armo_id;
+	private int armo_id;
 	
 	@Column(name = Konstanten.C_ARMOR_TYP)
-	public String armo_typ;
+	private String armo_typ;
 
 	public String getArmo_typ() {
 		return armo_typ;

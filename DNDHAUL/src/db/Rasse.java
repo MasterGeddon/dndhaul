@@ -18,10 +18,10 @@ public class Rasse implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = Konstanten.C_RASSE_ID)
-	public int rasse_id;
+	private int rasse_id;
 	
 	@Column(name = Konstanten.C_RASSE_NAME)
-	public String rasse_name;
+	private String rasse_name;
 	
 
 	public int getRasse_id() {
