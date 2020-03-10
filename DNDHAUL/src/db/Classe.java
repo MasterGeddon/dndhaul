@@ -15,7 +15,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 @Entity
 @Table(name = Konstanten.T_CLASSE)
 public class Classe implements Serializable {

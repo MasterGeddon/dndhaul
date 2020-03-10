@@ -15,6 +15,11 @@ import db.Rasse_to_AbilityScore;
 import db.Size;
 import db.Weapon;
 import konsti.Konstanten;
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
+
 
 public class CharCreatorController {
 	

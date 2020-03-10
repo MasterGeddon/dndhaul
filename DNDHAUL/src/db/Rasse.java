@@ -10,7 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import konsti.Konstanten;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 @Entity
 @Table(name = Konstanten.T_RASSE)
 public class Rasse implements Serializable {

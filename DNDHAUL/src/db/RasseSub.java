@@ -15,7 +15,10 @@ import konsti.Konstanten;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 @Entity
 @Table(name = Konstanten.T_RASSESUB)
 public class RasseSub implements Serializable{

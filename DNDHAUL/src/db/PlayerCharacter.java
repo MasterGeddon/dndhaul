@@ -13,7 +13,10 @@ import javax.persistence.Table;
 
 import controller.DBAbfragen;
 import konsti.Konstanten;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 @Entity
 @Table(name = Konstanten.T_PLAYERCHARACTER)
 public class PlayerCharacter implements Serializable {

@@ -14,7 +14,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import konsti.Konstanten;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 @Entity
 @Table(name = Konstanten.T_WEAPON)
 public class Weapon implements Serializable {

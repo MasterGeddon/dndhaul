@@ -1,7 +1,10 @@
 package db;
 
 import java.io.Serializable;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 public class Rasse_to_AbilityScore_Id implements Serializable{
 
 	

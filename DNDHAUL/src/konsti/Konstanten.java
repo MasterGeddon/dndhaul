@@ -1,5 +1,8 @@
 package konsti;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 public class Konstanten {
 	
 	

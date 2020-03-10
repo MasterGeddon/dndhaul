@@ -12,7 +12,10 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import konsti.Konstanten;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 @Entity
 @IdClass(Rasse_to_AbilityScore_Id.class)
 @Table(name = Konstanten.T_RASSE_TO_ABILITYSCORE)

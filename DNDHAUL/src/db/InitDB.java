@@ -3,7 +3,10 @@ package db;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 public class InitDB {
 
 	public static void main(String[] args) {

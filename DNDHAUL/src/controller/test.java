@@ -10,7 +10,10 @@ import javax.persistence.Query;
 
 import db.*;
 import konsti.Konstanten;
-
+/**
+ * @author Gregor Ober 
+ * 
+ * **/
 public class test {
 
 	
