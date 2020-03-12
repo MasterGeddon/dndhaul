@@ -54,7 +54,7 @@ public class Encryption {
 		return string;
 	}
 	
-	public static String encryptString(String text) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
+	public static String firstencryptString(String text) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
 		byte[] newKey = (privateKey).getBytes("UTF-8");
 		MessageDigest sha = MessageDigest.getInstance("SHA-256");
 		newKey = sha.digest(newKey);
@@ -62,7 +62,19 @@ public class Encryption {
 		Cipher cipher = Cipher.getInstance("AES");
 		cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 		byte[]encrypt = cipher.doFinal(text.getBytes());
-		String pw = (""+Base64.getEncoder().encode(encrypt));
+		String pw = new String(Base64.getEncoder().encode(encrypt));
+		System.out.println("Password fr "+pw);
+		System.out.println("Password im Check "+ checkPWencryptString(text, newKey));
+		
+		return filterString(pw);
+	}
+	
+	public static String checkPWencryptString(String text ,byte[] newKey) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+		SecretKeySpec secretKey = new SecretKeySpec(newKey,"AES");
+		Cipher cipher = Cipher.getInstance("AES");
+		cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+		byte[]encrypt = cipher.doFinal(text.getBytes());
+		String pw = new String(Base64.getEncoder().encode(encrypt));
 		
 		return filterString(pw);
 	}

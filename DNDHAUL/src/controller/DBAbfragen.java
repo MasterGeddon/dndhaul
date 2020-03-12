@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import db.UserCon;
 import konsti.Konstanten;
 
 /**
@@ -17,14 +18,10 @@ public class DBAbfragen {
 	
 	// gibt die elemente des angegebenen tabels zurück
 	public Object getListTable(EntityManager entityManager , String table ) {
-	
-		
 		 Query query = entityManager.
 			      createQuery( "Select t " +
 			      "from "+table+" t");
-			      List<Object> list=(List<Object>)query.getResultList( );
-		
-		
+			      List<Object> list=(List<Object>)query.getResultList( );	
 		return list;
 	}
 	
@@ -48,28 +45,24 @@ public class DBAbfragen {
 			 List<Object> list = (List<Object>)query.getResultList();
 			 return list;
 		}
-	
-		public Object selectObjectFromTableByQuery(EntityManager entityManager ,Query query) {
-			
-			 List<Object> list = (List<Object>)query.getResultList();
-			 return list;
-		}
+
+		//funktioniert nicht
+//		public Object selectObjectFromTableByQuery(EntityManager entityManager ,Query query) {
+//			
+//			 List<Object> list = (List<Object>)query.getResultList();
+//			 return list;
+//		}
 		
-		public Object selectSingleObjectFromTableByQuery(EntityManager entityManager ,Query query) {
-			
-				Object list = (Object)query.getSingleResult();
-			 return list;
-		}
 		
-		public Object getUSERQUERY(EntityManager entityManager , String name , String encryptedPW) {
-			System.out.println("PASSW :"+encryptedPW);
-			 Query query = entityManager.
-				      createQuery( "SELECT t " +
-				      " FROM "+Konstanten.T_USER+" t "+
-				    	"WHERE t."+Konstanten.C_USER_NAME+" = "+"\'"+name+"\'"+
-				    	" AND " +"t."+Konstanten.C_USER_PASSWORD+" = "+"\'"+encryptedPW+"\'");
-			return  selectSingleObjectFromTableByQuery(entityManager, query);
-			 
-		}
+		//funktioniert nicht
+//		public Object selectSingleObjectFromTableByQuery(EntityManager entityManager ,String table , String idFeld,int id) {
+//			 Query query = entityManager.
+//				      createQuery( "Select t " +
+//				      " from "+table+" t "+
+//				    	"where t."+idFeld+" ="	+id  );
+//				Object list = (Object)query.getSingleResult();
+//			 return list;
+//		}
+//		
 		
 }

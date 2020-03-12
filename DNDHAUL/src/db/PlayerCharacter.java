@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import controller.DBAbfragen;
-import dbLogin.UserCon;
 import konsti.Konstanten;
 /**
  * @author Gregor Ober 
@@ -66,6 +65,8 @@ public class PlayerCharacter implements Serializable {
 	public void setChar_user_id(UserCon char_user_id) {
 		this.char_user_id = char_user_id;
 	}
+	
+	public PlayerCharacter() {}
 
 	public PlayerCharacter (String char_backstory , String char_name ,Classe char_clas_id ,RasseSub char_rasu_id,
 			UserCon char_user_id,

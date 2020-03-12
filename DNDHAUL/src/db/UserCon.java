@@ -1,4 +1,4 @@
-package dbLogin;
+package db;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
@@ -47,6 +47,7 @@ public class UserCon implements Serializable {
 	@JoinColumn(name = Konstanten.C_USER_ACCESSRIGHTS , nullable = false)
 	private AccessRights userRights;
 
+	public UserCon() {}
 	
 	public UserCon(String userName, String userPW, int maxCharacter , AccessRights userRights) {
 		this.userName = userName;
@@ -85,7 +86,7 @@ public class UserCon implements Serializable {
 	}
 
 	public void setUserPassword(String userPassword) throws InvalidKeyException, UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
-		this.userPassword = Encryption.encryptString(userPassword);
+		this.userPassword = Encryption.firstencryptString(userPassword);
 	}
 
 	public int getMaxCharacter() {

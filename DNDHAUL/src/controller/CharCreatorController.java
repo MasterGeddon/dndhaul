@@ -14,7 +14,7 @@ import db.RasseSub;
 import db.Rasse_to_AbilityScore;
 import db.Size;
 import db.Weapon;
-import dbLogin.UserCon;
+import db.UserCon;
 import konsti.Konstanten;
 /**
  * @author Gregor Ober 
@@ -34,6 +34,18 @@ public class CharCreatorController {
 		return (List<PlayerCharacter>)dbCon.getListTable(entityManager, Konstanten.T_PLAYERCHARACTER);
 	}
 	
+	// gibt alle charactere anhand des Users zurück
+	public List<PlayerCharacter> getAllCharacterByUser(EntityManager entityManager, UserCon us){
+		
+		List<PlayerCharacter> plc = getAllCharacter(entityManager);
+		List<PlayerCharacter> finish = new ArrayList<PlayerCharacter>();
+		for(PlayerCharacter p : plc) {
+			if(p.getChar_user_id().getUserID()==us.getUserID()||us.getUserRights().getAccessRights_id() == Konstanten.I_ACCESSRIGHT_ADMIN) {
+				finish.add(p);
+			}
+		}
+		return finish;
+	}
 	
 	// gibt den Namen des Characters zurück
 	public String getCharName (PlayerCharacter character) {
