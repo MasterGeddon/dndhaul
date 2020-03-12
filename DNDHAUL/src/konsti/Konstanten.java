@@ -67,6 +67,8 @@ public class Konstanten {
 	public static final String C_PLAYERCHARACTER_NAME = "char_name";
 	public static final String C_PLAYERCHARACTER_CLASSE_ID = "char_clas_id";
 	public static final String C_PLAYERCHARACTER_RASSE_ID = "char_rasu_id";
+	public static final String C_PLAYERCHARACTER_USER_ID = "char_user_id";
+
 	
 	public static final String C_PLAYERCHARACTER_STR ="char_str";
 	public static final String C_PLAYERCHARACTER_DEX ="char_dex";
@@ -102,23 +104,37 @@ public class Konstanten {
 	
 	//User Login
 	
-	public static final String T_USER ="User";
+	public static final String T_USER ="UserCon";
 	public static final String C_USER_ID = "user_id";
 	public static final String C_USER_NAME = "user_name";
 	public static final String C_USER_PASSWORD = "user_pw";
-	
+	public static final String C_USER_MAXCHARACTER = "user_max_char";
+	public static final int I_MAXCHARACTER =10;
 	//Access Rights
 	
 	public static final String T_ACCESSRIGHTS ="AccessRights";
 	public static final String C_ACCESSRIGHTS_ID ="aces_id";
 	public static final String C_ACCESSRIGHTS_NAME ="aces_name";
 	public static final String C_ACCESSRIGHTS_DESCRIPTION ="aces_description";
-	public static final String C_USER_MAXCHARACTER = "user_max_char";
+
+	//Only read
+	public static final int I_ACCESSRIGHT_READ = 25;
+	//read and write
+	public static final int I_ACCESSRIGHT_WRITE = 666;
+	// read , write and delete
+	public static final int I_ACCESSRIGHT_DELETE = 999;
+	//admin 
+	public static final int I_ACCESSRIGHT_ADMIN = 42069;
 	
 	//USER ACCESSRIGHTS
 	public static final String C_USER_ACCESSRIGHTS = "user_aces_id";
 
 	
-
+	//User problem konstanten
+	
+	public static final String EX_S_NOUSER = "NOUSER";
+	public static final String EX_S_NOUNIQUEUSER = "NOUNIQUEUSER";
+	public static final String EX_S_ENCRYPTION = "ENCRYPTION ERROR";
+	
 	
 }

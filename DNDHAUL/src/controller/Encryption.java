@@ -26,17 +26,48 @@ public class Encryption {
 	private static String privateKey ="K87)sadf?sx,_462asüxc";
 	
 	
+	//https://www.torsten-horn.de/techdocs/ascii.htm
+	//https://howtodoinjava.com/regex/java-clean-ascii-text-non-printable-chars/
+	// bei diesen zeichen kam es zu problemen .
+	public static String filterString( String string) {
+		
+		// [
+		string = string.replaceAll("\\x5b", "");
+		// ]
+		string = string.replaceAll("\\x5d", "");
+		// \
+		string = string.replaceAll("\\x5c", "");
+		// /
+		string = string.replaceAll("\\x7c", "");
+		// {
+		string = string.replaceAll("\\x7b", "");
+		// }
+		string = string.replaceAll("\\x7d", "");
+		// )
+		string = string.replaceAll("\\x28", "");
+		// (
+		string = string.replaceAll("\\x29", "");
+		// |
+		string = string.replaceAll("\\x7c", "");
+		
+		
+		return string;
+	}
+	
 	public static String encryptString(String text) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
 		byte[] newKey = (privateKey).getBytes("UTF-8");
-		MessageDigest sha = MessageDigest.getInstance("SHA-512");
+		MessageDigest sha = MessageDigest.getInstance("SHA-256");
 		newKey = sha.digest(newKey);
 		SecretKeySpec secretKey = new SecretKeySpec(newKey,"AES");
 		Cipher cipher = Cipher.getInstance("AES");
 		cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 		byte[]encrypt = cipher.doFinal(text.getBytes());
+		String pw = (""+Base64.getEncoder().encode(encrypt));
 		
-		return ""+Base64.getEncoder().encode(encrypt);
+		return filterString(pw);
 	}
 	
+	
+
 
 }

@@ -14,6 +14,7 @@ import db.RasseSub;
 import db.Rasse_to_AbilityScore;
 import db.Size;
 import db.Weapon;
+import dbLogin.UserCon;
 import konsti.Konstanten;
 /**
  * @author Gregor Ober 
@@ -25,6 +26,8 @@ public class CharCreatorController {
 	
 	
 	DBAbfragen dbCon = new DBAbfragen();
+	
+	
 	
 	// gibt alle charactere zurück
 	public List<PlayerCharacter> getAllCharacter(EntityManager entityManager) {
@@ -98,9 +101,9 @@ public class CharCreatorController {
 	}
 	
 	// fügt einen leeren Spieler hinzu
-	public PlayerCharacter addPlayerCharacter(EntityManager em) {
+	public PlayerCharacter addPlayerCharacter(EntityManager em ,UserCon char_user_id) {
 		
-		PlayerCharacter pc = new PlayerCharacter();
+		PlayerCharacter pc = new PlayerCharacter(char_user_id);
 		pc.setChar_clas_id(getEmptyClasse(em));
 		pc.setChar_rasu_id(getEmptyRasseSub(em));
 		em.getTransaction().begin();
@@ -115,7 +118,11 @@ public class CharCreatorController {
 	public PlayerCharacter savePlayerCharacter (
 			EntityManager em , String char_backstory , String char_name ,Classe char_clas_id ,RasseSub char_rasu_id,
 			int char_str,int char_dex, int char_con,int char_int, int char_wis, int char_cha , 
-			PlayerCharacter pc) {
+			PlayerCharacter pc //,User char_user_id
+			) {
+		
+		//if(char_user_id.getUserID() == pc.getChar_user_id().getUserID() || char_user_id.getUserRights().getAccessRights_id() == 69) {
+		
 		pc.setChar_backstory(char_backstory);
 		pc.setChar_name(char_name);
 		pc.setChar_rasu_id(char_rasu_id);
@@ -133,7 +140,7 @@ public class CharCreatorController {
 		em.getTransaction().commit();
 		
 		System.out.println("Charakter Saved with ID: "+pc.getChar_id());
-		
+		//}
 		return pc;
 	}
 	

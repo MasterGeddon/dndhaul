@@ -26,31 +26,51 @@ import konsti.Konstanten;
 
 @Entity
 @Table(name = Konstanten.T_USER)
-public class User implements Serializable {
+public class UserCon implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	@Column(name = Konstanten.C_USER_ID)
-	public int userID;
+	private int userID;
 	
-	@Column(name = Konstanten.C_USER_NAME , nullable = false)
-	public String userName;
+	@Column(name = Konstanten.C_USER_NAME ,unique = true, nullable = false)
+	private String userName;
 	
 	@Column(name = Konstanten.C_USER_PASSWORD , nullable = false)
-	public String userPassword;
+	private String userPassword;
 	
 	
 	@Column(name = Konstanten.C_USER_MAXCHARACTER , nullable = false)
-	public int maxCharacter;
+	private int maxCharacter;
 	
 	@ManyToOne
 	@JoinColumn(name = Konstanten.C_USER_ACCESSRIGHTS , nullable = false)
-	public AccessRights userRights;
+	private AccessRights userRights;
 
 	
-	public User(String userName, String userPW, int maxCharacter , AccessRights userRights) {
+	public UserCon(String userName, String userPW, int maxCharacter , AccessRights userRights) {
 		this.userName = userName;
-		this.userPassword = userPW;
+		try {
+			this.setUserPassword(userPW);
+		} catch (InvalidKeyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchPaddingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalBlockSizeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (BadPaddingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.maxCharacter = maxCharacter;
 		this.userRights = userRights;
 	}
@@ -82,6 +102,16 @@ public class User implements Serializable {
 
 	public void setUserRights(AccessRights userRights) {
 		this.userRights = userRights;
+	}
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	

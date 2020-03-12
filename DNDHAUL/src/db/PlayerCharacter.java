@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import controller.DBAbfragen;
+import dbLogin.UserCon;
 import konsti.Konstanten;
 /**
  * @author Gregor Ober 
@@ -54,13 +55,26 @@ public class PlayerCharacter implements Serializable {
 	@JoinColumn(name= Konstanten.C_PLAYERCHARACTER_RASSE_ID , nullable = true)
 	private RasseSub char_rasu_id;
 	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = Konstanten.C_PLAYERCHARACTER_USER_ID , nullable = false)
+	private UserCon char_user_id;
 	
+	public UserCon getChar_user_id() {
+		return char_user_id;
+	}
+
+	public void setChar_user_id(UserCon char_user_id) {
+		this.char_user_id = char_user_id;
+	}
+
 	public PlayerCharacter (String char_backstory , String char_name ,Classe char_clas_id ,RasseSub char_rasu_id,
+			UserCon char_user_id,
 			int char_str,int char_dex, int char_con,int char_int, int char_wis, int char_cha) {
 		this.char_backstory = char_backstory ;
 		this.char_name = char_name;
 		this.char_clas_id = char_clas_id;
 		this.char_rasu_id = char_rasu_id;
+		this.char_user_id = char_user_id;
 		
 		this.char_str = char_str;
 		this.char_dex = char_dex;
@@ -71,14 +85,17 @@ public class PlayerCharacter implements Serializable {
 		
 	}
 	
-	public PlayerCharacter (String char_backstory , String char_name) {
+	public PlayerCharacter (String char_backstory , String char_name ,UserCon char_user_id) {
+		
 		this.char_backstory = char_backstory ;
 		this.char_name = char_name;
+		this.char_user_id = char_user_id;
 		
 	}
-	public PlayerCharacter () {
+	public PlayerCharacter (UserCon char_user_id) {
 		this.char_backstory = "Diese Character backstory ist leer" ;
 		this.char_name = "BOB";
+		this.char_user_id = char_user_id;
 	}
 	
 	

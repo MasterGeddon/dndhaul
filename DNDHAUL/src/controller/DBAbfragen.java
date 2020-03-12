@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import konsti.Konstanten;
+
 /**
  * @author Gregor Ober 
  * 
@@ -47,4 +49,27 @@ public class DBAbfragen {
 			 return list;
 		}
 	
+		public Object selectObjectFromTableByQuery(EntityManager entityManager ,Query query) {
+			
+			 List<Object> list = (List<Object>)query.getResultList();
+			 return list;
+		}
+		
+		public Object selectSingleObjectFromTableByQuery(EntityManager entityManager ,Query query) {
+			
+				Object list = (Object)query.getSingleResult();
+			 return list;
+		}
+		
+		public Object getUSERQUERY(EntityManager entityManager , String name , String encryptedPW) {
+			System.out.println("PASSW :"+encryptedPW);
+			 Query query = entityManager.
+				      createQuery( "SELECT t " +
+				      " FROM "+Konstanten.T_USER+" t "+
+				    	"WHERE t."+Konstanten.C_USER_NAME+" = "+"\'"+name+"\'"+
+				    	" AND " +"t."+Konstanten.C_USER_PASSWORD+" = "+"\'"+encryptedPW+"\'");
+			return  selectSingleObjectFromTableByQuery(entityManager, query);
+			 
+		}
+		
 }
