@@ -28,6 +28,11 @@ public class Encryption {
 	
 	//https://www.torsten-horn.de/techdocs/ascii.htm
 	//https://howtodoinjava.com/regex/java-clean-ascii-text-non-printable-chars/
+	//https://stackoverflow.com/questions/6684665/java-byte-array-to-string-to-byte-array
+	//https://stackoverflow.com/questions/8519669/replace-non-ascii-character-from-string#8519863
+	//https://stackoverflow.com/questions/13175129/split-and-error
+	
+	
 	// bei diesen zeichen kam es zu problemen .
 	public static String filterString( String string) {
 		
