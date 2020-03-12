@@ -1,7 +1,13 @@
 package dbLogin;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import controller.Encryption;
 import konsti.Konstanten;
 /**
  * @author Gregor Ober 
@@ -53,16 +60,12 @@ public class User implements Serializable {
 		return userID;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
-
 	public String getUserPassword() {
 		return userPassword;
 	}
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUserPassword(String userPassword) throws InvalidKeyException, UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
+		this.userPassword = Encryption.encryptString(userPassword);
 	}
 
 	public int getMaxCharacter() {

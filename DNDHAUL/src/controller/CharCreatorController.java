@@ -26,6 +26,7 @@ public class CharCreatorController {
 	
 	DBAbfragen dbCon = new DBAbfragen();
 	
+	// gibt alle charactere zurück
 	public List<PlayerCharacter> getAllCharacter(EntityManager entityManager) {
 		return (List<PlayerCharacter>)dbCon.getListTable(entityManager, Konstanten.T_PLAYERCHARACTER);
 	}
