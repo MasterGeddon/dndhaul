@@ -100,4 +100,25 @@ public class Konstanten {
 	public static final String L_STAT_CHARISMA = "Charisma";  
 	
 	
+	//User Login
+	
+	public static final String T_USER ="User";
+	public static final String C_USER_ID = "user_id";
+	public static final String C_USER_NAME = "user_name";
+	public static final String C_USER_PASSWORD = "user_pw";
+	
+	//Access Rights
+	
+	public static final String T_ACCESSRIGHTS ="AccessRights";
+	public static final String C_ACCESSRIGHTS_ID ="aces_id";
+	public static final String C_ACCESSRIGHTS_NAME ="aces_name";
+	public static final String C_ACCESSRIGHTS_DESCRIPTION ="aces_description";
+	public static final String C_USER_MAXCHARACTER = "user_max_char";
+	
+	//USER ACCESSRIGHTS
+	public static final String C_USER_ACCESSRIGHTS = "user_aces_id";
+
+	
+
+	
 }
