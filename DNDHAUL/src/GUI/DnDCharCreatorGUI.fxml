@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="621.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Charakter" />
+      <Button id="NewCharButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="356.0" text="Neuer Charakter erstellen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <ComboBox id="currentChar" prefWidth="150.0" GridPane.rowIndex="1" />
+      <Label text="Name" GridPane.rowIndex="2" />
+      <Label text="Rasse" GridPane.rowIndex="3" />
+      <Label text="Klasse" GridPane.rowIndex="4" />
+      <Label text="Waffen Proficiancy" GridPane.rowIndex="5" />
+      <Label text="Rüstung Proficiancy" GridPane.rowIndex="6" />
+      <Label text="Standardwerte" GridPane.rowIndex="8" />
+      <Label text="Rassenboni" GridPane.rowIndex="9" />
+      <Label text="Gesamtwerte" GridPane.rowIndex="10" />
+      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Strength" />
+            <Label text="Constitution" GridPane.columnIndex="2" />
+            <Label text="Dexterity" GridPane.columnIndex="1" />
+            <Label text="Wisdom" GridPane.columnIndex="4" />
+            <Label text="Intelligence" GridPane.columnIndex="3" />
+            <Label text="Charisma" GridPane.columnIndex="5" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="310.0" layoutY="264.0" prefHeight="37.0" prefWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Strength" />
+            <Label text="Constitution" GridPane.columnIndex="2" />
+            <Label text="Dexterity" GridPane.columnIndex="1" />
+            <Label text="Wisdom" GridPane.columnIndex="4" />
+            <Label text="INtelligence" GridPane.columnIndex="3" />
+            <Label text="Charisma" GridPane.columnIndex="5" />
+         </children>
+      </GridPane>
+      <Button mnemonicParsing="false" text="Randomwerte generieren" GridPane.rowIndex="7" />
+      <GridPane layoutX="310.0" layoutY="264.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Strength" />
+            <Label text="Constitution" GridPane.columnIndex="2" />
+            <Label text="Dexterity" GridPane.columnIndex="1" />
+            <Label text="Wisdom" GridPane.columnIndex="4" />
+            <Label text="INtelligence" GridPane.columnIndex="3" />
+            <Label text="Charisma" GridPane.columnIndex="5" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="310.0" layoutY="264.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Spinner id="StrSpin" editable="true" />
+            <Spinner id="DexSpin" editable="true" GridPane.columnIndex="1" />
+            <Spinner id="ConSpin" editable="true" GridPane.columnIndex="2" />
+            <Spinner id="IntSpin" editable="true" GridPane.columnIndex="3" />
+            <Spinner id="WisSpin" editable="true" GridPane.columnIndex="4" />
+            <Spinner id="ChaSpin" editable="true" GridPane.columnIndex="5" />
+         </children>
+      </GridPane>
+      <Button id="SaveButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="612.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+      <Button id="AbortButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="381.0" text="Abbrechen" GridPane.rowIndex="11" />
+      <Label id="name" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label id="race" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label id="class" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <content>
+          <AnchorPane id="WeaponScroll" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <content>
+          <AnchorPane id="ArmorScroll" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>
