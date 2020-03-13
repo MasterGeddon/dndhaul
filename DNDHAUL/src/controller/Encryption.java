@@ -33,7 +33,7 @@ public class Encryption {
 	//https://stackoverflow.com/questions/13175129/split-and-error
 	
 	
-	// bei diesen zeichen kam es zu problemen .
+	// bei diesen zeichen kam es zu problemen . dadurch werden sie entfernt
 	public static String filterString( String string) {
 		
 		// [
@@ -59,22 +59,12 @@ public class Encryption {
 		return string;
 	}
 	
+	
+	// Verschlüsselt den String
 	public static String firstencryptString(String text) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
 		byte[] newKey = (privateKey).getBytes("UTF-8");
 		MessageDigest sha = MessageDigest.getInstance("SHA-256");
 		newKey = sha.digest(newKey);
-		SecretKeySpec secretKey = new SecretKeySpec(newKey,"AES");
-		Cipher cipher = Cipher.getInstance("AES");
-		cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-		byte[]encrypt = cipher.doFinal(text.getBytes());
-		String pw = new String(Base64.getEncoder().encode(encrypt));
-		System.out.println("Password fr "+pw);
-		System.out.println("Password im Check "+ checkPWencryptString(text, newKey));
-		
-		return filterString(pw);
-	}
-	
-	public static String checkPWencryptString(String text ,byte[] newKey) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
 		SecretKeySpec secretKey = new SecretKeySpec(newKey,"AES");
 		Cipher cipher = Cipher.getInstance("AES");
 		cipher.init(Cipher.ENCRYPT_MODE, secretKey);
