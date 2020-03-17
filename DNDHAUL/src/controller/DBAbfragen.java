@@ -3,6 +3,8 @@ package controller;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import db.UserCon;
@@ -64,5 +66,31 @@ public class DBAbfragen {
 //			 return list;
 //		}
 //		
+		
+		public void startEntityManager(EntityManagerFactory entityManagerFactory) {
+
+			EntityManager entityManager = entityManagerFactory.createEntityManager();
+			
+			StaticClassObjects.entityManager = entityManager;
+		}
+		
+		public void startEntityManagerFactory() {
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("gruppe13-update");
+			StaticClassObjects.entiyMangerFactory =entityManagerFactory;
+		}
+		
+		public void closeEntityManager(EntityManagerFactory entityManagerFactory, EntityManager entityManager) {
+			
+			entityManager.close();
+			entityManagerFactory.close();
+			
+			
+		}
+		
+		public void startUp() {
+			startEntityManagerFactory();
+			startEntityManager(StaticClassObjects.entiyMangerFactory);
+		}
+		
 		
 }

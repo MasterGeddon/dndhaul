@@ -21,9 +21,12 @@ public class test {
 		// TODO Auto-generated method stub
 
 		DBAbfragen dbf = new DBAbfragen();
+		 dbf.startEntityManagerFactory();
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("gruppe13-update");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityManagerFactory entityManagerFactory = StaticClassObjects.entiyMangerFactory;
+
+		dbf.startEntityManager(entityManagerFactory);
+		EntityManager entityManager = StaticClassObjects.entityManager;
 
 		// https://www.tutorialspoint.com/de/jpa/jpa_jpql.htm 
 		
