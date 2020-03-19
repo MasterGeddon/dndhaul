@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 import db.AbilityScores;
 import db.Armor;
@@ -224,6 +225,22 @@ public class CharCreatorController {
 		 return list;
 	}
 	
+
+	public void deleteAllCharacterByUser(UserCon user , EntityManager entityManager) {
+		
+		List<PlayerCharacter> pcs=	getAllCharacterByUser(entityManager, user);
+		
+		
+		for(PlayerCharacter pc: pcs) {
+		
+			entityManager.getTransaction().begin();
+			entityManager.remove(pc);
+			entityManager.flush();
+			entityManager.getTransaction().commit();
+			
+		}
+		
+	}
 	
 
 }

@@ -30,10 +30,12 @@ public class DBAbfragen {
 	// löscht ein element aus der angegebenen Tabelle anhand seines Inhalts , im zugehörigen Column feld
 	public void deleteObjectFromTable(EntityManager entityManager , String table, int id , String idFeld) {
 		
-		 Query query = entityManager.
-			      createQuery( "Delete" +
-			      "from "+table+" t"+
-			    	"where t."+idFeld+" ="	+id  );
+		  int count = entityManager.
+			      createQuery( "Delete " +
+			      "from "+table+" t "+
+			    	"where t."+idFeld+" ="	+id  ).executeUpdate();
+		 
+		 
 	}
 	
 	// gibt ein element aus der angegebenen Tabelle anhand seines Inhalts , im zugehörigen Column feld zurück

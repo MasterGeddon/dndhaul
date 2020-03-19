@@ -87,12 +87,22 @@ public class LogInPanel extends JPanel{
 				UserController usC = new UserController();
 				try {
 				StaticClassObjects.currentUser = (UserCon) usC.getThisUser(em, userTextField.getText(), new String(passwordTextField.getPassword()));
+				
+				JDialog jD = new JDialog();
+				jD.setContentPane(new UserPanel());
+				jD.setModalityType(ModalityType.APPLICATION_MODAL);
+				jD.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				jD.pack();
+				jD.setVisible(true);
 				}catch(Exception es) {
 					errorLabel.setText("Fehler beim Login");
 					refreshYourPanel();
 				}
 				refreshYourPanel();
 				System.out.println("this User is "+StaticClassObjects.currentUser.getUserName());
+				
+
+				
 			}
 		});
 		
