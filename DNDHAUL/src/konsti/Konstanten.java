@@ -77,7 +77,7 @@ public class Konstanten {
 	public static final String C_PLAYERCHARACTER_WIS ="char_wis";
 	public static final String C_PLAYERCHARACTER_CHA ="char_cha";
 	
-	
+	public static final Integer I_PLAYERCHARACTER_DEF_STAT = 10 ; 
 	
 	
 	//ColumnFeld Tabelle classe_armor

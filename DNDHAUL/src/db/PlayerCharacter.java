@@ -32,18 +32,20 @@ public class PlayerCharacter implements Serializable {
 	@Column(name= Konstanten.C_PLAYERCHARACTER_NAME)
 	private String char_name ;
 	
+	
+	
 	@Column(name= Konstanten.C_PLAYERCHARACTER_STR , nullable = false)
-	private int char_str =0;
+	private int char_str = Konstanten.I_PLAYERCHARACTER_DEF_STAT;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_DEX , nullable = false)
-	private int char_dex =0;
+	private int char_dex = Konstanten.I_PLAYERCHARACTER_DEF_STAT;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_CON , nullable = false)
-	private int char_con =0;
+	private int char_con = Konstanten.I_PLAYERCHARACTER_DEF_STAT;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_INT , nullable = false)
-	private int char_int =0;
+	private int char_int = Konstanten.I_PLAYERCHARACTER_DEF_STAT;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_WIS , nullable = false)
-	private int char_wis =0;
+	private int char_wis = Konstanten.I_PLAYERCHARACTER_DEF_STAT;
 	@Column(name= Konstanten.C_PLAYERCHARACTER_CHA , nullable = false)
-	private int char_cha =0;
+	private int char_cha = Konstanten.I_PLAYERCHARACTER_DEF_STAT;
 	
 	
 	@ManyToOne(optional = false)

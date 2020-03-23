@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -72,6 +73,19 @@ public class test {
 		    
 
 	      CharCreatorController con = new CharCreatorController();
+	      
+	      List<PlayerCharacter> ppcss = con.getAllCharacterByUser(entityManager, user);
+	      
+	      ArrayList<List<PlayerCharacter>> ppllpp = new ArrayList<List<PlayerCharacter>>();
+	      for(PlayerCharacter p : ppcss) {
+	    	 List<Rasse_to_AbilityScore> pp = con.getRasseToAbilityScores(entityManager, p.getChar_rasu_id());
+	    	 for(Rasse_to_AbilityScore ps : pp) {
+	    		 System.out.println(ps.getRtas_absc_id().getAbsc_name());
+	    		 System.out.println(ps.getRtas_improv_anz());
+	    	 }
+	    	 
+	      }
+	      
 //	      PlayerCharacter pc = con.addPlayerCharacter(entityManager, user);
 //	      con.setStatsRandom(pc);
 //	      con.savePlayerCharacter(entityManager, "Pressslufthammmmer da be", "Bernhard",con.getEmptyClasse(entityManager),con.getEmptyRasseSub(entityManager) ,
